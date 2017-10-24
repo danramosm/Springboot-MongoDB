@@ -13,7 +13,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.7.RELEASE</version>
+		<version>1.5.8.RELEASE</version>
 	</parent>
 
 
@@ -26,6 +26,12 @@
 				<exclusion>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-tomcat</artifactId>
+
+
+				</exclusion>
+				<exclusion>
+					<groupId>javax.ws.rs</groupId>
+					<artifactId>jsr311-api</artifactId>
 				</exclusion>
 			</exclusions>
 		</dependency>
@@ -35,7 +41,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-undertow</artifactId>
 		</dependency>
-		
+
+		<!-- Eureka client -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
+		</dependency>
+
 		<!-- Soporte JSON -->
 		<dependency>
 			<groupId>com.jayway.jsonpath</groupId>
@@ -49,7 +61,19 @@
 			<artifactId>spring-data-mongodb</artifactId>
 		</dependency>
 	</dependencies>
-	
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Camden.SR5</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -61,5 +85,5 @@
 		</plugins>
 		<finalName>SpringBoot-eureka</finalName>
 	</build>
-	
+
 </project>
