@@ -1,5 +1,5 @@
-# Springboot-Eureka
-Pruebas sobre la implementación de servicios REST con Springboot + mongodb + eureka
+# Springboot-Mongo DB
+Pruebas sobre la implementación de servicios REST con Springboot + mongodb 
 
 
 Servicio ciudades
